@@ -75,7 +75,7 @@ public class Employee : Person, IPayable
 
     public void Spend(double iznos)
     {
-        if (iznos > 0 && iznos <= BankovniRacun)
+        if (IsSpendAmountValid(iznos))
         {
             BankovniRacun -= iznos;
             Console.WriteLine($"{Ime} je potrošio {iznos} dinara. Trenutno stanje: {BankovniRacun} dinara.");
@@ -107,6 +107,8 @@ public class Employee : Person, IPayable
             }
         }
     }
+
+    // new commit
 
     
 }
