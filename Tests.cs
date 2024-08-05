@@ -30,7 +30,7 @@ public class EmployeeTests
         var employee = new Employee("milovan", 30, 5);
         var spendamount = 23453;
         employee.Spend(spendamount);
-        var expected = 200000 - 23453;
+        var expected = 200000 - spendamount;
         ClassicAssert.AreEqual(expected, employee.BankovniRacun);
     }
     [Test]
@@ -40,7 +40,7 @@ public class EmployeeTests
         var employee = new Employee("milovan", 30, 5);
         var spendamount = 500;
         employee.Spend(spendamount);
-        var expected = 200000 - 500;
+        var expected = 200000 - spendamount;
         ClassicAssert.AreEqual(expected, employee.BankovniRacun);
     }
 
@@ -51,7 +51,7 @@ public class EmployeeTests
         var employee = new Employee("milovan", 30, 5);
         var spendamount = 0;
         employee.Spend(spendamount);
-        var expected = 200000 - 0;
+        var expected = 200000 - spendamount;
         ClassicAssert.AreEqual(expected, employee.BankovniRacun);
     }
  
@@ -62,7 +62,7 @@ public class EmployeeTests
         var employee = new Employee("milovan", 30, 5);
         var earnamount = 1500;
         employee.Earn(earnamount);
-        var expected = 200000 + 1500;
+        var expected = 200000 + earnamount;
         ClassicAssert.AreEqual(expected, employee.BankovniRacun);
     }
 
@@ -73,9 +73,9 @@ public class EmployeeTests
     {
 
         var employee = new Employee("milovan", 30, 5);
-        var spendamount = 0;
-        employee.Earn(spendamount);
-        var expected = 200000 + 0;
+        var earnamount = 0;
+        employee.Earn(earnamount);
+        var expected = 200000 + earnamount;
         ClassicAssert.AreEqual(expected, employee.BankovniRacun);
     }
 
@@ -95,8 +95,8 @@ public class EmployeeTests
         //assert
         ClassicAssert.AreEqual(3, EmployeeDbFake.employeeList.Count);
        
-    }//nelkkajfha
-    //mmansmf
+    }
+    
 
 
 
