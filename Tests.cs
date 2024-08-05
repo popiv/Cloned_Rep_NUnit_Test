@@ -33,7 +33,54 @@ public class EmployeeTests
         var expected = 200000 - 23453;
         ClassicAssert.AreEqual(expected, employee.BankovniRacun);
     }
+    [Test]
+    public void Spend_Valid_Amount_Decreasae_BancAccount()
+    {
 
+        var employee = new Employee("milovan", 30, 5);
+        var spendamount = 500;
+        employee.Spend(spendamount);
+        var expected = 200000 - 500;
+        ClassicAssert.AreEqual(expected, employee.BankovniRacun);
+    }
+
+    [Test]
+    public void Spend_ZeroAmount_DoesNotChangeBankAccount()
+    {
+
+        var employee = new Employee("milovan", 30, 5);
+        var spendamount = 0;
+        employee.Spend(spendamount);
+        var expected = 200000 - 0;
+        ClassicAssert.AreEqual(expected, employee.BankovniRacun);
+    }
+ 
+    [Test]
+    public void Earn_PositiveAmount_IncreasesBankAccount()
+    {
+
+        var employee = new Employee("milovan", 30, 5);
+        var earnamount = 1500;
+        employee.Earn(earnamount);
+        var expected = 200000 + 1500;
+        ClassicAssert.AreEqual(expected, employee.BankovniRacun);
+    }
+
+    
+    
+    [Test]
+    public void Earn_ZeroAmount_DoesNotChangeBankAccountunt()
+    {
+
+        var employee = new Employee("milovan", 30, 5);
+        var spendamount = 0;
+        employee.Earn(spendamount);
+        var expected = 200000 + 0;
+        ClassicAssert.AreEqual(expected, employee.BankovniRacun);
+    }
+
+    
+    
     [Test]    
     public void TestDbCount()
     {
@@ -48,7 +95,8 @@ public class EmployeeTests
         //assert
         ClassicAssert.AreEqual(3, EmployeeDbFake.employeeList.Count);
        
-    }
+    }//nelkkajfha
+    //mmansmf
 
 
 
