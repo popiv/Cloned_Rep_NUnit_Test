@@ -106,10 +106,6 @@ public class Employee : Person, IPayable
                 Console.WriteLine(e.Ime);
             }
         }
-    }
-
-    // new commit
-
-    
+    }    
 }
 
